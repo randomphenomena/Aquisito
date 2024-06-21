@@ -7,6 +7,7 @@ import Orders from './Pages/Orders'
 import Signin from './Pages/Signin'
 import Cart from './Pages/Cart'
 import NotFound from './Pages/NotFound'
+import Navbar from './components/Navbar'
 
 import './App.css'
 
@@ -29,7 +30,9 @@ const App = () => {
   return (
     <>
    <BrowserRouter>
-   <AppRoutes></AppRoutes>
+   <Navbar />
+   <AppRoutes  />
+   
    </BrowserRouter>
     </>
   )
