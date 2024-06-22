@@ -7,7 +7,7 @@ const Navbar = () => {
         <nav className="flex md:flex-row flex-col-reverse md:justify-between items-center fixed z-50 w-screen py-5 px-12 text-sm gap-7 top-0">
             <ul className="flex items-center gap-5">
                 <li className="font-bold text-lg">
-                    <NavLink to= '/'>
+                    <NavLink to= '/' >
                        AQUISITO
                     </NavLink>
                 </li>

@@ -1,10 +1,10 @@
-
+import Card from "../../components/Card"
 
 function Home() {
   
   return (
    
-    <div>Home</div>
+    <Card></Card>
     
   )
 }
