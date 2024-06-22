@@ -1,50 +1,60 @@
 import { NavLink } from "react-router-dom"
 
-import {LogoAquisito} from "../../assets/LogoAquisito"
-
 const Navbar = () => {
+    const activeStyle = 'underline underline-offset-4 '
+    
     return(
-        <nav className="flex justify-between items-center fixed z-50 w-screen py-5 px-12 text-sm">
-            <ul className="flex items-center gap-8">
-                <li>
+        <nav className="flex md:flex-row flex-col-reverse md:justify-between items-center fixed z-50 w-screen py-5 px-12 text-sm gap-7 top-0">
+            <ul className="flex items-center gap-5">
+                <li className="font-bold text-lg">
                     <NavLink to= '/'>
-                       Aquisito
+                       AQUISITO
                     </NavLink>
                 </li>
 
                 <li>
-                    <NavLink to= '/'>
+                    <NavLink to= '/'
+                    className={({ isActive}) => 
+                        isActive ? activeStyle: undefined}>
                        All
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to= '/home'>
+                    <NavLink to= '/home' 
+                    className={({ isActive}) => 
+                        isActive ? activeStyle: undefined}>
                        Home
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to= '/personal-care'>
+                    <NavLink to= '/personal-care'
+                    className={({ isActive}) => 
+                        isActive ? activeStyle: undefined}>
                        Personal care
                     </NavLink>
                 </li>
                 
                 <li>
-                    <NavLink to= '/pets'>
+                    <NavLink to= '/pets'
+                    className={({ isActive}) => 
+                        isActive ? activeStyle: undefined}>
                        Pets
                     </NavLink>
                 </li>
 
                 <li>
-                    <NavLink to= '/snacks'>
+                    <NavLink to= '/snacks'
+                    className={({ isActive}) => 
+                        isActive ? activeStyle: undefined}>
                        Snacks
                     </NavLink>
                 </li>
             </ul>
 
-            <ul className="flex items-center gap-8">
-                <li>
+            <ul className="flex items-center gap-5">
+                <li className=" text-slate-800 italic">
                     <NavLink >
-                       +591-789876
+                       UserName
                     </NavLink>
                 </li>
 
