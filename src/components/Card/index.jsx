@@ -10,11 +10,16 @@ const getFirstFourWords = (text) => {
 
 const Card = (data) => {
   const context = useContext(ShoppingCartContext)
+
+  const showProduct = (productToShow) => {
+    context.openProductDetail()
+    context.setProductShow(productToShow)
+  }
   
     return (
         <div 
         className="  cursor-pointer w-56 h-60 rounded-2xl mb-12"
-        onClick={() => context.openProductDetail()}>
+        onClick={() => showProduct()}>
             <figure className='relative mb-4 w-full h-3/5'>
                 <span className="absolute bottom-0 left-0 bg-secondary-color/60 object-cover rounded-2xl text-white text-sm py-0.5 px-2">{data.data.category}</span>
                 <img src={data.data.image} alt="" className="w-auto h-full mx-auto"/>

@@ -5,7 +5,7 @@ import ProductDetail from "../../components/ProductDetail"
 
 function Home() {
   const [items, setItems] = useState(null)
-
+  
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(response => response.json() )
