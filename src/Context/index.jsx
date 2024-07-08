@@ -13,7 +13,13 @@ export const ShoppingCartProvider = ({children}) => {
     const closeProductDetail = () => setisProductDetailOpen(false)
 
     // Product detail  . Show product
-    const [productShow, setProductShow] = useState({})
+    const [productShow, setProductShow] = useState({
+
+        title: "",
+        image: "",
+        description: "",
+        price: "",
+    })
 
     return (
         <ShoppingCartContext.Provider value={{
