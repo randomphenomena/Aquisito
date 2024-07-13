@@ -11,9 +11,18 @@ const getFirstFourWords = (text) => {
 const Card = (data) => {
   const context = useContext(ShoppingCartContext)
 
-  const showProduct = (productToShow) => {
+  const showProduct = (productDetail) => {
     context.openProductDetail()
-    context.setProductShow(productToShow)
+    context.setProductShow(productDetail)
+  }
+
+  const addProductsToCart = (event, productData) => {
+    event.stopPropagation()
+    context.setCount(context.count + 1)
+    context.setCartProducts([...context.cartProducts, productData])
+    context.openCheckOutSide()
+    context.closeProductDetail()
+
   }
   
     return (
@@ -23,8 +32,7 @@ const Card = (data) => {
             <figure className='relative mb-4 w-full h-3/5'>
                 <span className="absolute bottom-0 left-0 bg-secondary-color/60 object-cover rounded-2xl text-white text-sm py-0.5 px-2">{data.data.category}</span>
                 <img src={data.data.image} alt="" className="w-auto h-full mx-auto"/>
-                <button 
-                onClick={() => context.setCount(context.count + 1)}
+                <button onClick={(event) => addProductsToCart(event, data.data)}
                 className=" absolute top-2 right-4 bg-accent w-6 h-6 rounded-full flex items-center justify-center text-white font-bold text-lg">+</button>
             </figure>
             <div className="flex justify-between text-sm bg-secondary-color py-4 px-4 rounded-b-2xl">

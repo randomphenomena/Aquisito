@@ -11,6 +11,8 @@ import Cart from './Pages/Cart'
 import NotFound from './Pages/NotFound'
 import Navbar from './components/Navbar'
 
+import CheckOutSide from './components/CheckOutSide'
+
 import './App.css'
 
 const AppRoutes = () =>{
@@ -35,12 +37,16 @@ const App = () => {
       
     <BrowserRouter>
    <Navbar />
+   
    <Layout>
    <AppRoutes  />
+   <CheckOutSide />
    </Layout>
+   
    </BrowserRouter>
-
+   
     </ShoppingCartProvider>
+    
    
     </>
   )

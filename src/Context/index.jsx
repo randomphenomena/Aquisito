@@ -1,4 +1,5 @@
 import { createContext, useState } from "react"
+import CheckOutSide from "../components/CheckOutSide"
 
 export const ShoppingCartContext = createContext()
 
@@ -21,6 +22,14 @@ export const ShoppingCartProvider = ({children}) => {
         price: "",
     })
 
+    // Product detail  . Show product
+    const [cartProducts, setCartProducts] = useState([])
+
+     // Open . close card - Checkout
+     const [isCheckOutSideOpen, setisCheckOutSideOpen] = useState(false)
+     const openCheckOutSide = () => setisCheckOutSideOpen(true)
+     const closeCheckOutSide = () => setisCheckOutSideOpen(false)
+
     return (
         <ShoppingCartContext.Provider value={{
             count,
@@ -29,7 +38,14 @@ export const ShoppingCartProvider = ({children}) => {
             closeProductDetail,
             isProductDetailOpen,
             productShow,
-            setProductShow
+            setProductShow,
+            cartProducts,
+            setCartProducts,
+            openCheckOutSide,
+            closeCheckOutSide,
+            isCheckOutSideOpen,
+            
+
         }}> 
             {children}
         </ShoppingCartContext.Provider>
