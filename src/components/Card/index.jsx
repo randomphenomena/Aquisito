@@ -43,7 +43,7 @@ const Card = (data) => {
 
       </div>
   
-      <p className="text-accent font-semibold text-lg">{data.data.price}€</p>
+      <p className="text-accent font-semibold text-sm">{data.data.price}€</p>
     </div>
         </div>
     )

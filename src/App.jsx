@@ -38,7 +38,7 @@ const App = () => {
     <BrowserRouter>
    <Navbar />
    
-   <Layout>
+   <Layout className= " mt-7">
    <AppRoutes  />
    <CheckOutSide />
    </Layout>
