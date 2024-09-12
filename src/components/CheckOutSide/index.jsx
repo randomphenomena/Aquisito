@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { ShoppingCartContext } from '../../Context'
+import OrderCard from '../OrderCard'
 
 
 import './styles.css'
@@ -8,7 +9,7 @@ import './styles.css'
 
 const CheckOutSide = () => {
     const context = useContext(ShoppingCartContext)
-    console.log(context.productShow)
+    console.log(context.cartProducts)
 
    
 
@@ -19,7 +20,15 @@ const CheckOutSide = () => {
                 <button onClick={() => context.closeCheckOutSide(context.isCheckOutSideOpen)}>X</button>
             </div>
 
-            
+            {
+                context.cartProducts.map (product => {
+                    <OrderCard
+                    title={product.title}
+                    image={product.image}
+                    price={product.price}></OrderCard>
+
+                })
+            }
            
         </aside>
     )
