@@ -1,5 +1,5 @@
 const OrderCard = props => {
-    const { id, title, image, price} = props
+    const {title, image, price} = props
 
     return (
         <div className="flex justify-between items-center">

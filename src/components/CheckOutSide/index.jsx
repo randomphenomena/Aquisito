@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { ShoppingCartContext } from '../../Context'
-import OrderCard from '../OrderCard'
+import OrderCard from '../../components/OrderCard'
 
 
 import './styles.css'
@@ -21,15 +21,15 @@ const CheckOutSide = () => {
             </div>
 
             {
-                context.cartProducts.map (product => {
-                    <OrderCard
+                context.cartProducts.map(product => (
+                    <OrderCard 
+                    key={product.id}
                     title={product.title}
-                    image={product.image}
-                    price={product.price}></OrderCard>
-
-                })
+                    imageURL={product.image}
+                    price={product.price}
+                    />
+                ))
             }
-           
         </aside>
     )
 }
